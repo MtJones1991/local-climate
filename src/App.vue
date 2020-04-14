@@ -1,13 +1,5 @@
 <template>
-  <div
-    id="app"
-    :class="
-      typeof this.$store.state.weather.main != 'undefined' &&
-      this.$store.state.weather.main.temp < 15
-        ? 'cold'
-        : ''
-    "
-  >
+  <div id="app" :class="[this.warm, this.cold]">
     <transition name="fade" mode="out-in">
       <router-view />
     </transition>
@@ -19,6 +11,20 @@ export default {
   name: "app",
   data() {
     return {};
+  },
+  computed: {
+    warm() {
+      return typeof this.$store.state.weather.main != "undefined" &&
+        this.$store.state.weather.main.temp > 15
+        ? "warm"
+        : "";
+    },
+    cold() {
+      return typeof this.$store.state.weather.main != "undefined" &&
+        this.$store.state.weather.main.temp < 15
+        ? "cold"
+        : "";
+    }
   }
 };
 </script>
@@ -47,17 +53,27 @@ body {
 }
 
 #app {
-  background-image: url("./assets/warm-bg.jpg");
+  background-image: url("./assets/night-mountain.jpg");
   background-size: cover;
   background-position: bottom;
   transition: 0.7s;
+  width: 100%;
+}
+
+#app.warm {
+  background-image: url("./assets/warm-mountain.jpg");
+  background-size: cover;
+  background-position: bottom;
+  transition: 0.7s;
+  width: 100%;
 }
 
 #app.cold {
-  background-image: url("./assets/cold-bg.jpg");
+  background-image: url("./assets/cold-mountain.jpg");
   background-size: cover;
   background-position: bottom;
   transition: 0.7s;
+  width: 100%;
 }
 
 main {
@@ -65,8 +81,8 @@ main {
   padding: 25px;
   background-image: linear-gradient(
     to bottom,
-    rgba(0, 0, 0, 0.25),
-    rgba(0, 0, 0, 0.75)
+    rgba(0, 0, 0, 0.068),
+    rgba(0, 0, 0, 0.288)
   );
 }
 </style>

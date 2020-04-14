@@ -40,8 +40,8 @@ export default {
 
   mounted() {
     setTimeout(() => {
-      // router.push("about");
-    }, 6500);
+      router.push("about");
+    }, 4500);
   }
 };
 </script>
@@ -190,7 +190,7 @@ ANIMATED TEXT
     width: 0;
   }
   to {
-    width: 11em;
+    width: 12em;
   }
 }
 @keyframes blinkTextCursor {
