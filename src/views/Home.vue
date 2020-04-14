@@ -6,21 +6,12 @@
           <div class="container">
             <div class="textContainer">
               <div class="animatedText d-flex justify-content-center pb-4">
-                <h1 class="aniText anim-typewriter">
-                  L o c a l - C l i m a t e
-                </h1>
+                <h1 class="aniText anim-typewriter">L o c a l - C l i m a t e</h1>
               </div>
             </div>
             <div class="row">
-              <a
-                href="#"
-                class="intro-banner-vdo-play-btn pinkBg"
-                target="_blank"
-              >
-                <i
-                  class="glyphicon glyphicon-play whiteText"
-                  aria-hidden="true"
-                ></i>
+              <a href="#" class="intro-banner-vdo-play-btn pinkBg" target="_blank">
+                <i class="glyphicon glyphicon-play whiteText" aria-hidden="true"></i>
                 <span class="ripple pinkBg"></span>
                 <span class="ripple pinkBg"></span>
                 <span class="ripple pinkBg"></span>
@@ -49,7 +40,7 @@ export default {
 
   mounted() {
     setTimeout(() => {
-      router.push("about");
+      // router.push("about");
     }, 6500);
   }
 };
@@ -191,15 +182,15 @@ ANIMATED TEXT
 
 /* Animation */
 .anim-typewriter {
-  animation: typewriter 3s steps(19) 1s 1 normal both,
-    blinkTextCursor 650ms steps(19) infinite normal;
+  animation: typewriter 1.7s steps(21) 1s 1 normal both,
+    blinkTextCursor 650ms steps(21) infinite normal;
 }
 @keyframes typewriter {
   from {
     width: 0;
   }
   to {
-    width: 10em;
+    width: 11em;
   }
 }
 @keyframes blinkTextCursor {
@@ -220,7 +211,7 @@ ANIMATED TEXT
     width: 0;
   }
   to {
-    width: 14.5em;
+    width: 15.5em;
   }
 }
 @keyframes blinkTextCursor {
